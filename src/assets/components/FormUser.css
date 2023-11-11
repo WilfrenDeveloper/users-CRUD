@@ -1,23 +1,48 @@
 .form__div{
     display: none;
+    position: fixed;
+    min-width: 100vw;
+    min-height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: #ffffff65;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    z-index: 1;
+}
+
+.form__div--active{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form__form{
     width: 300px;
     padding: 15px;
     border: solid 1px var(--lgrey);
     color: var(--blue);
     background-color: white;
-    z-index: 10;
-    position: fixed;
-    top: center;
-}
-
-.form__div--active{
-    display: block;
+    position: relative;
 }
 
 .form__h2{
     font-weight: 600;
     margin-bottom: 10px;
     text-align: center;
+}
+
+.form__x{
+    position: absolute;
+    font-size: 30px;
+    color: var(--blue);
+    top: 0px;
+    right: 5px;
+    cursor: pointer;
+}
+
+.form__x:hover{
+    color: red;
 }
 
 .form__span{

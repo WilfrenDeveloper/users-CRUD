@@ -2,17 +2,25 @@ import './CardUser.css'
 
 const CardUser = ({ user, deleteUsers, setinfoUpdate, setButtonLabel }) => {
 
-    const handleDelete = () => {
-        deleteUsers('/users', user.id)
-    }
-
     const handleUpdate = () => {
         setinfoUpdate(user)
         setButtonLabel({button:"Save Changes",  h2:"Edit User"})
         document.querySelector(".form__div").classList.add("form__div--active")
     }
-
     
+    const handleDelete = () => {
+        deleteUsers('/users', user.id)
+    }
+
+    const handleConfirm = () =>{
+        document.querySelector(`.card__${user.id}`).classList.add("card__confirm")
+    }
+
+    const handleCancel = () => {
+        document.querySelector(`.card__${user.id}`).classList.remove("card__confirm")
+    }
+
+    //document.querySelector(".card__div--confirm").classList.remove("card__confirm")//
 
   return (
     <article className="card__article">
@@ -25,8 +33,15 @@ const CardUser = ({ user, deleteUsers, setinfoUpdate, setButtonLabel }) => {
             </li>
         </ul>
         <div className='card__div--button'>
-        <button className="card__button button__delete" onClick={handleDelete}><i className='bx bx-trash'></i></button>
-        <button className="card__button button__edit" onClick={handleUpdate}><i className='bx bx-pencil'></i></button>
+            <button className="card__button button__delete" onClick={handleConfirm}><i className='bx bx-trash'></i></button>
+            <button className="card__button button__edit" onClick={handleUpdate}><i className='bx bx-pencil'></i></button>
+        </div>
+        <div className={`card__div--confirm card__${user.id}`}>
+            <div>
+                <h3 className='card__h3'>Are you sure on delete the user <span className='card__h3--span'>{user.first_name} {user.last_name}</span></h3>
+                <button className='button__acept' onClick={handleDelete}>Acept</button>
+                <button className='button__cancel' onClick={handleCancel}>Cancel</button>
+            </div>
         </div>
     </article>
   )
