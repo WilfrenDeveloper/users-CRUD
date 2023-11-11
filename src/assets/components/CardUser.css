@@ -1,0 +1,62 @@
+
+.app__section{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2vw;
+    margin-top: 5vw;
+}
+
+.card__article{
+    width: 381px;
+    height: 274px;
+    padding: 20px;
+    border: solid 1px var(--border);
+    border-radius: 4px;
+}
+
+.card__h2{
+    font-weight: 500;
+    font-size: 25px;
+    margin: 10px 0;
+}
+
+.card__li{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+
+.card__span--label{
+    font-family: var(--label);
+    color: var(--lgrey);
+}
+
+.card__span--value{
+    color: var(--grey);
+}
+
+.card__div--button{
+    display: flex;
+    gap: 10px;
+}
+
+.card__button{
+    position: relative;
+    left: 241px;
+    bottom: -20px;
+    gap: 5px;
+    border: solid 1px var(--lgrey);
+    border-radius: 5px;
+    Width: 43px;
+    Height: 43px;
+    color: var(--lgrey);
+    font-size: 25px;
+}
+
+.button__delete{
+    background-color: var(--rose);
+}
+
+.card__button>i{
+    color: var(--lgrey);
+}

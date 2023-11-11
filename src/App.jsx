@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 import useCrud from "./assets/hooks/useCrud"
 import FormUser from "./assets/components/FormUser"
-import './App.css'
 import CardUser from "./assets/components/CardUser"
+import './App.css'
 
 
 function App() {
@@ -25,6 +25,7 @@ function App() {
       infoUpdate = {infoUpdate}
       updateUsers = {updateUsers}
       />
+      <section className="app__section">
       {
         users?.map( user =>(
           <CardUser
@@ -35,6 +36,7 @@ function App() {
           />
         ))
       }
+      </section>
     </div>
   )
 }
