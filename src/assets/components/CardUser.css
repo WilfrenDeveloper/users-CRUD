@@ -10,12 +10,12 @@
     width: 381px;
     height: 274px;
     padding: 20px;
-    border: solid 1px var(--border);
+    border: solid 1px var(--lgrey);
     border-radius: 4px;
 }
 
 .card__h2{
-    font-weight: 500;
+    font-weight: 600;
     font-size: 25px;
     margin: 10px 0;
 }

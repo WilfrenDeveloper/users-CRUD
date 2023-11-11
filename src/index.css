@@ -5,10 +5,10 @@
     --label: 'Roboto', sans-serif;
 
     --blue : #0F0F2D;
-    --border: #E5E5E5;
     --lgrey: #D3D3D3;
     --grey: #302F2F;
     --rose: #D93F3F;
+    --button: #555A88;
 
 }
 
@@ -26,4 +26,12 @@
 html{
     padding: 5vw;
     color: var(--blue);
+}
+
+button{
+    cursor: pointer;
+}
+
+i{
+    padding-top: 6px;
 }

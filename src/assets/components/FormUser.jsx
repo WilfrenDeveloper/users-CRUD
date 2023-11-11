@@ -1,7 +1,8 @@
 import { useEffect } from "react"
 import { useForm } from "react-hook-form"
+import './FormUser.css'
 
-const FormUser = ({ createUsers, infoUpdate, updateUsers }) => {
+const FormUser = ({ createUsers, infoUpdate, setinfoUpdate, updateUsers, buttonLabel, setButtonLabel }) => {
 
     const { handleSubmit, register, reset } = useForm ()
 
@@ -14,6 +15,8 @@ const FormUser = ({ createUsers, infoUpdate, updateUsers }) => {
 
         if (infoUpdate){
             updateUsers('/users', infoUpdate.id, data)
+            setinfoUpdate()
+            setButtonLabel({button:"Add New User",  h2:"New User"})
         } else {
             createUsers('/users', data)
         }
@@ -25,32 +28,35 @@ const FormUser = ({ createUsers, infoUpdate, updateUsers }) => {
             last_name: '',
             birthday: ''
           })
+
+          document.querySelector('.form__div').classList.remove("form__div--active")
     }
 
   return (
-    <div>
-        <form onSubmit={handleSubmit(submit)}>
-            <label>
-                Email
-                <input {...register('email')} type="email" />
+    <div className="form__div">
+        <h2 className="form__h2">{buttonLabel.h2}</h2>
+        <form className="form__form" onSubmit={handleSubmit(submit)}>
+        <label className="form__label">
+                <span className="form__span">First name</span>
+                <input className="form__input" {...register('first_name')} type="text" />
             </label>
-            <label>
-                Password
-                <input {...register('password')} type="password" />
+            <label className="form__label">
+                <span className="form__span">Last name</span>
+                <input className="form__input" {...register('last_name')} type="text" />
             </label>
-            <label>
-                First name
-                <input {...register('first_name')} type="text" />
+            <label className="form__label">
+                <span className="form__span">Email</span>
+                <input className="form__input" {...register('email')} type="email" />
             </label>
-            <label>
-                Last name
-                <input {...register('last_name')} type="text" />
+            <label className="form__label">
+                <span className="form__span">Password</span>
+                <input className="form__input" {...register('password')} type="password" />
             </label>
-            <label>
-                Birthday
-                <input {...register('birthday')} type="date" />
+            <label className="form__label">
+                <span className="form__span">Birthday</span>
+                <input className="form__input input__date" {...register('birthday')} type="date" />
             </label>
-            <button>Submit</button>
+            <button className="form__button">{buttonLabel.button}</button>
         </form>
     </div>
   )
