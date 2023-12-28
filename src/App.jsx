@@ -10,7 +10,7 @@ function App() {
   const [infoUpdate, setinfoUpdate] = useState()
   const [buttonLabel, setButtonLabel] = useState({ button: "Add New User", h2: "New User" })
 
-  const url = 'https://users-crud.academlo.tech'
+  const url = 'https://user-crud-backend-dev-agcn.1.us-1.fl0.io'
   const [users, getUsers, createUsers, deleteUsers, updateUsers] = useCrud(url)
 
   useEffect(() => {
